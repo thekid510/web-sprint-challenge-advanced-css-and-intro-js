@@ -206,7 +206,11 @@ export const artists = [
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Practice accessing data above by console.log-ing following items:
 (no functions needed) */
-
+let counter = 0;
+for (var i = 0; i < 5; i++) {
+  counter += i;
+}
+console.log(counter);
 //(1) Name of the first artist (0th index) in the array
   console.log(artists[0].name);
 
