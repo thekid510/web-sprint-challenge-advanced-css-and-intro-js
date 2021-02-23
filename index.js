@@ -206,11 +206,7 @@ export const artists = [
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Practice accessing data above by console.log-ing following items:
 (no functions needed) */
-let counter = 0;
-for (var i = 0; i < 5; i++) {
-  counter += i;
-}
-console.log(counter);
+
 //(1) Name of the first artist (0th index) in the array
   console.log(artists[0].name);
 
@@ -247,17 +243,28 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(array, string, key){
+function get20s(array) {
   const newArray = [];
- for(let i=0; i < array.length; i++){
-  if(array[i][key].includes(string)){
-    newArray.push(array[i]);
+  const yearOfBirth = 1900;
+  const yearOfDeath = 2000;
+  
 
+  for (let i = 0; i <= array.length - 1; i++) {
+    const artistSplitArr = array[i].years.split(' - ');
+    const artistYearOfBirth = Number(artistSplitArr[0]);
+    const artistYearOfDeath = Number(artistSplitArr[1]);
+
+    if (artistYearOfBirth >= yearOfBirth && artistYearOfDeath < yearOfDeath) {
+      newArray.push(array[i].name);
+      
     }
   }
- return newArray;
+
+  return newArray;
 }
- console.log(get20s(artists,'1900 - 1999','years'));
+
+   console.log(get20s(artists, "years"));
+ 
 
 
 
@@ -308,8 +315,8 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array,artists){
+  
 }
 
 
@@ -337,7 +344,7 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */){
+function getHTML(){
 
     /* Code here */
 
